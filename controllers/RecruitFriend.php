@@ -40,6 +40,7 @@ class RecruitFriend extends MX_Controller
     public function __construct()
     {
         parent::__construct();
+        $this->load->model('recruit_model');
 
         if(!ini_get('date.timezone'))
         {
@@ -59,11 +60,22 @@ class RecruitFriend extends MX_Controller
 
     public function index()
     {
+        $id = $this->recruit_model->getAccountID($this->session->userdata('wow_sess_id'));
+        $recruiter = $this->recruit_model->getRecruiterID($this->session->userdata('wow_sess_id'));
+
         $data = array(
             'pagetitle' => $this->lang->line('tab_recruit_friend'),
-            'lang' => $this->lang->lang()
+            'lang' => $this->lang->lang(),
+            'recruiter' => $recruiter,
+            'id' => $id
         );
 
         $this->template->build('index', $data);
+    }
+
+    public function add()
+    {
+        $recruit = $this->input->post('recruit');
+        echo $this->recruit_model->setRecruiter($recruit);
     }
 }
