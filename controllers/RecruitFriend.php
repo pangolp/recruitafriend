@@ -1,5 +1,5 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 /**
  * BlizzCMS
  *
@@ -42,19 +42,16 @@ class RecruitFriend extends MX_Controller
         parent::__construct();
         $this->load->model('recruit_model');
 
-        if(!ini_get('date.timezone'))
-        {
+        if (!ini_get('date.timezone')) {
             date_default_timezone_set($this->config->item('timezone'));
         }
 
-        if(!$this->wowgeneral->getMaintenance())
-        {
-            redirect(base_url('maintenance'),'refresh');
+        if (!$this->wowgeneral->getMaintenance()) {
+            redirect(base_url('maintenance'), 'refresh');
         }
 
-        if (!$this->wowauth->isLogged())
-        {
-            redirect(base_url('login'),'refresh');
+        if (!$this->wowauth->isLogged()) {
+            redirect(base_url('login'), 'refresh');
         }
     }
 

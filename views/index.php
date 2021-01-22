@@ -29,7 +29,7 @@
 		</div>
 		<?= form_close(); ?>
 	</div>
-</div>
+</section>
 <script>
 	function recruitForm(e) {
 		e.preventDefault();
@@ -37,8 +37,7 @@
 		var recruit = $('#recruit_id').val();
 		var account = $('#account_id').val();
 
-		if(recruit == '')
-		{
+		if (recruit == '') {
 			Swal.fire({
 				icon: 'error',
 				title: 'The ID cannot be empty',
@@ -48,8 +47,7 @@
 			return false;
 		}
 
-		if(recruit == account)
-		{
+		if (recruit == account) {
 			Swal.fire({
 				icon: 'error',
 				title: 'You must choose another ID',
@@ -60,13 +58,15 @@
 		}
 
 		$.ajax({
-			url:"<?= base_url($lang.'/recruit/add'); ?>",
-			method:"POST",
-			data:{recruit, account},
-			dataType:"text",
+			url: "<?= base_url($lang . '/recruit/add'); ?>",
+			method: "POST",
+			data: {
+				recruit,
+				account
+			},
+			dataType: "text",
 
-			beforeSend: function()
-			{
+			beforeSend: function() {
 				Swal.fire({
 					icon: 'info',
 					title: 'Checking data...',
@@ -76,15 +76,12 @@
 				});
 			},
 
-			success:function(response)
-			{
-				if(!response)
-				{
+			success: function(response) {
+				if (!response) {
 					alert(response);
 				}
 
-				if (response == 'accountIDNotFound')
-				{
+				if (response == 'accountIDNotFound') {
 					Swal.fire({
 						icon: 'error',
 						title: 'Error',
@@ -95,8 +92,7 @@
 					return false;
 				}
 
-				if(response == 'accountIDFound')
-				{
+				if (response == 'accountIDFound') {
 					Swal.fire({
 						icon: 'success',
 						title: "Correctly recruited",
@@ -105,7 +101,7 @@
 						timer: 50000
 					});
 					$('#recruitForm')[0].reset();
-					window.location.replace("<?= base_url($lang.'/recruit'); ?>");
+					window.location.replace("<?= base_url($lang . '/recruit'); ?>");
 				}
 			}
 		});

@@ -1,5 +1,5 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 /**
  * BlizzCMS
  *
@@ -57,12 +57,9 @@ class Recruit_model extends CI_Model
     {
         $existingAccount = $this->auth->select('id')->where('id', $recruitId)->get('account')->row('id');
 
-        if (!$existingAccount)
-        {
+        if (!$existingAccount) {
             return 'accountIDNotFound';
-        }
-        else
-        {
+        } else {
             $this->auth->set('recruiter', $recruitId)->where('id', $this->session->userdata('wow_sess_id'))->update('account');
             return 'accountIDFound';
         }
