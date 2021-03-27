@@ -35,7 +35,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
  * @filesource
  */
 
-class RecruitFriend extends MX_Controller
+class Recruit extends MX_Controller
 {
     public function __construct()
     {
