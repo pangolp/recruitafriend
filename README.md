@@ -8,8 +8,8 @@ The following routes must be added to the `routes.php` file
 
 ```php
 /*Recruit Friend*/
-$route[$lang.'/recruit'] = 'recruitFriend/index';
-$route[$lang.'/recruit/add'] = 'recruitFriend/add';
+$route[$lang.'/recruit'] = 'recruitafriend/recruit/index';
+$route[$lang.'/recruit/add'] = 'recruitafriend/recruit/add';
 ```
 
 You should also use [SweetAlert2](https://sweetalert2.github.io/) for notifications.
@@ -22,8 +22,8 @@ Se deben de agregar las siguiente rutas al fichero `routes.php`
 
 ```php
 /*Recruit Friend*/
-$route[$lang.'/recruit'] = 'recruitFriend/index';
-$route[$lang.'/recruit/add'] = 'recruitFriend/add';
+$route[$lang.'/recruit'] = 'recruitafriend/recruit/index';
+$route[$lang.'/recruit/add'] = 'recruitafriend/recruit/add';
 ```
 
 También debes utilizar [SweetAlert2](https://sweetalert2.github.io/) para las notificaciones
