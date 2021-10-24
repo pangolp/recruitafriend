@@ -1,4 +1,4 @@
-# Recruit a friend
+# Recruit a friend for BlizzCMS-plus
 
 ![recruit_a_friend](https://user-images.githubusercontent.com/2810187/138608057-75db3f1a-512a-4096-99c9-9efa16d07c96.png)
 
