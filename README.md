@@ -1,5 +1,7 @@
 # Recruit a friend
 
+![recruit_a_friend](https://user-images.githubusercontent.com/2810187/138608057-75db3f1a-512a-4096-99c9-9efa16d07c96.png)
+
 > English
 
 It is a module that allows you to recruit a friend to have the benefits that the blizzlike emulator offers. Which are, increased experience while in a group. Invoke your friend once every 60 minutes and give him 1 level for each level obtained, up to the default level 60, but this can be modified in the emulator (3.3.5a)
